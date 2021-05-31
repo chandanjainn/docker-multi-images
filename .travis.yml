@@ -5,7 +5,8 @@ before_install:
   - docker build -t chandanjain/docker-multi-images -f ./client/Dockerfile.dev  ./client
 
 script:
-  - docker run -e CI=true chandanjain/docker-multi-images npm test
+  - docker run -e CI=true chandanjain/docker-multi-images
+#  - docker run -e CI=true chandanjain/docker-multi-images npm test
 
 after_success:
   - docker build -t chandanjain/multi-client ./client
